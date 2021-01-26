@@ -1,20 +1,12 @@
 # -*- coding: utf-8 -*-
-
+ 
 import sqlite3
 import datetime
 
 class Db:
     def __init__(self):
         database = "ExpiraBot.sqlite3"
-        self.conn = self.create_connection(database)
-
-    def create_connection(self, database):
-        try:
-            conn = sqlite3.connect(database)
-            return conn
-        except:
-            print("Erro ao conectar na database")
-        return None
+        self.a = ""
 
     def create_tables(self):
         self.conn.execute("CREATE TABLE IF NOT EXISTS User(" +
@@ -32,6 +24,14 @@ class Db:
                             "DtAviso CHAR(10) NOT NULL" +
                             ");")
         self.conn.commit()
+
+    def create_connection(self, database):
+        try:
+            conn = sqlite3.connect(database)
+            return conn
+        except:
+            print("Erro ao conectar na database")
+        return None
 
     def insertUser(self, chatID, Matricula):
         self.conn.execute("INSERT INTO User (ChatID, Matricula) VALUES ("+str(chatID)+","+str(Matricula)+");")
