@@ -2,7 +2,7 @@
  
 import sqlite3
 import datetime
-
+ 
 class Db:
     def __init__(self):
         database = "ExpiraBot.sqlite3"
