@@ -6,7 +6,7 @@ import datetime
 class Db:
     def __init__(self):
         database = "ExpiraBot.sqlite3"
-        self.conn = self.create_connection(database)
+        self.a = ""
 
     def create_connection(self, database):
         try:
